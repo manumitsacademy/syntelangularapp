@@ -14,9 +14,6 @@ export class AddstudentComponent implements OnInit {
   }
   studentname;
 
-  abc(s){
-    console.log(s);
-  }
   addStudent(student){
     this.http.post("http://localhost:4000/addstudent",student)
     .subscribe((res)=>{console.log(res)})

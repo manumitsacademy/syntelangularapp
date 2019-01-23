@@ -3,6 +3,9 @@
   <ul>
     <li *ngFor="let student of students">
       {{student.name}} ---- {{student.age}}
+      <button (click)="editStudent(student)">edit</button>
+      <button (click)="deleteStudent(student.name)">delete</button>
     </li>
   </ul>
+  <app-editstudent [cstudent]="currentStudent"></app-editstudent>
 </div>
