@@ -1,0 +1,16 @@
+<div id="d1">
+<h1>Enter the student details</h1>
+<form #sform="ngForm">
+  <input type="text" name="name" #stname="ngModel" [ngModel]="studentname" required minlength="4"><br>
+  <div *ngIf="sform.controls.sname">
+    <span *ngIf="sform.controls.sname.errors">
+        <span *ngIf="sform.controls.sname.errors.required">Student Name must </span>
+        <span *ngIf="sform.controls.sname.errors.minlength">Student Name must be min 4 letters</span>
+    </span>
+    
+  </div>
+  <input type="text" name="age" #stage="ngModel" [ngModel]><br>
+  <button [disabled]="!sform.valid" (click)="addStudent(sform.value)">Add Student</button>
+</form>
+<button (click)="abc(stname)">click</button>
+</div>
